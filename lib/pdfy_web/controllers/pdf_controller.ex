@@ -7,12 +7,11 @@ defmodule PdfyWeb.PdfController do
   action_fallback PdfyWeb.FallbackController
 
   def create(conn, %{"html" => html}) do
-    with {:ok, pdf} <- Document.generate_pdf(html),
-         {:ok, binary} <- File.read(pdf.path) do
+    with {:ok, path} <- Document.generate_pdf(html) do
       conn
       |> put_status(:created)
       |> put_resp_header("content-type", "application/pdf")
-      |> send_file(201, pdf.path)
+      |> send_file(201, path)
     end
   end
 end
