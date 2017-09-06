@@ -1,7 +1,7 @@
 defmodule Pdfy.Document do
   alias Pdfy.Document.Pdf
 
-  @wkhtmltopdf_path = Application.get_env(:pdfy, :wkhtmltopdf_path)
+  @wkhtmltopdf_path Application.get_env(:pdfy, :wkhtmltopdf_path)
 
   def generate_pdf(html) do
     with :ok <- File.write("/tmp/a.html", html),
