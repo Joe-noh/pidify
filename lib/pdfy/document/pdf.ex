@@ -1,3 +1,3 @@
 defmodule Pdfy.Document.Pdf do
-  defstruct []
+  defstruct [:path]
 end
