@@ -5,7 +5,7 @@ defmodule Pdfy.Document do
     with :ok <- File.write("/tmp/a.html", html),
          {_, 0} <- System.cmd("wkhtmltopdf", ["--quiet", "/tmp/a.html", "/tmp/a.pdf"]) do
 
-      {:ok, %Pdf{path: "/tmp/a.pdf"}}
+      {:ok, "/tmp/a.pdf"}
     end
   end
 end
