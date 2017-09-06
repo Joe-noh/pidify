@@ -5,7 +5,9 @@ defmodule PdfyWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PdfyWeb do
+  scope "/", PdfyWeb do
     pipe_through :api
+
+    post "/generate", PdfController, :create
   end
 end
