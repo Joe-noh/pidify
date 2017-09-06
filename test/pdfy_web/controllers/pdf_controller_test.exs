@@ -10,6 +10,7 @@ defmodule PdfyWeb.PdfControllerTest do
   end
 
   describe "create pdf" do
+    @tag :skip
     test "normal case", %{conn: conn} do
       res = conn
         |> post(pdf_path(conn, :create), @params)
