@@ -36,6 +36,10 @@ defmodule PdfyWeb.Endpoint do
     key: "_pdfy_key",
     signing_salt: "YTBN7hg5"
 
+  plug Corsica,
+    origins: "*",
+    allow_headers: ~w[accept content-type authorization origin]
+
   plug PdfyWeb.Router
 
   @doc """
