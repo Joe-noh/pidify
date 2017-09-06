@@ -13,6 +13,8 @@ config :pdfy, PdfyWeb.Endpoint,
   pubsub: [name: Pdfy.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :pdfy, :wkhtmltopdf_path, Map.get(System.get_env(), "WKHTMLTOPDF_PATH", "wkhtmltopdf")
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
