@@ -11,7 +11,8 @@ defmodule PdfyWeb.PdfController do
          {:ok, binary} <- File.read(pdf.path) do
       conn
       |> put_status(:created)
-      |> json(%{"pdf" => Base.encode64(binary)})
+      |> put_resp_header("content-type", "application/pdf")
+      |> send_file(201, pdf.path)
     end
   end
 end

@@ -11,11 +11,11 @@ defmodule PdfyWeb.PdfControllerTest do
 
   describe "create pdf" do
     test "normal case", %{conn: conn} do
-      json = conn
+      res = conn
         |> post(pdf_path(conn, :create), @params)
-        |> json_response(201)
+        |> response(201)
 
-      assert json["pdf"] |> is_binary
+      assert res |> is_binary
     end
   end
 end
