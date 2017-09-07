@@ -17,6 +17,15 @@ defmodule Pdfy.Document.Pdf do
 
   defstruct @attrs
 
+  def from_map(map) do
+    Enum.reduce @attrs, %__MODULE__{}, fn (attr, pdf) ->
+      str_attr = Atom.to_string(attr)
+      val = Map.get(map, attr, Map.get(map, str_attr))
+
+      Map.put(pdf, attr, val)
+    end
+  end
+
   def to_options(pdf) do
     Enum.reduce @attrs, [], fn (attr, acc) ->
       case Map.get(pdf, attr) do

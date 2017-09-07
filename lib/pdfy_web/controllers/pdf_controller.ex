@@ -6,8 +6,10 @@ defmodule PdfyWeb.PdfController do
 
   action_fallback PdfyWeb.FallbackController
 
-  def create(conn, %{"html" => html}) do
-    with {:ok, path} <- Document.generate_pdf(html) do
+  def create(conn, params) do
+    {html, params} = Map.pop(params, "html")
+
+    with {:ok, path} <- Document.generate_pdf(html, params) do
       conn
       |> put_status(:created)
       |> put_resp_header("content-type", "application/pdf")

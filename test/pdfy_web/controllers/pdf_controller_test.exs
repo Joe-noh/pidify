@@ -1,7 +1,7 @@
 defmodule PdfyWeb.PdfControllerTest do
   use PdfyWeb.ConnCase
 
-  @params %{html: "<h1>こんにちわ</h1>"}
+  @params %{html: "<h1>こんにちわ</h1>", grayscale: true}
 
   setup %{conn: conn} do
     conn = conn |> put_req_header("accept", "application/json")
