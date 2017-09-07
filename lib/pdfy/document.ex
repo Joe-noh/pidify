@@ -1,12 +1,15 @@
 defmodule Pdfy.Document do
 
+  alias Pdfy.Document.Pdf
+
   @wkhtmltopdf_path Application.get_env(:pdfy, :wkhtmltopdf_path)
 
-  def generate_pdf(html) do
+  def generate_pdf(html, opts) do
     html_path = tempfile_path(:html)
     pdf_path  = tempfile_path(:pdf)
 
-    options = ["--quiet", html_path, pdf_path]
+    options = Pdf.from_map(opts) |> Pdf.to_options()
+    options = options ++ ["--quiet", html_path, pdf_path]
 
     with :ok <- File.write(html_path, html),
          {_, 0} <- System.cmd(@wkhtmltopdf_path, options) do
