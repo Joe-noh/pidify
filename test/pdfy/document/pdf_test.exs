@@ -20,6 +20,22 @@ defmodule Pdfy.Document.PdfTest do
     end
   end
 
+  describe "from_map/1" do
+    test "build Pdf struct with given map which key is atom" do
+      pdf = Pdf.from_map(%{grayscale: true})
+
+      assert pdf.grayscale == true
+      assert pdf.page_size == nil
+    end
+
+    test "build Pdf struct with given map which key is string" do
+      pdf = Pdf.from_map(%{"grayscale" => true})
+
+      assert pdf.grayscale == true
+      assert pdf.page_size == nil
+    end
+  end
+
   describe "to_options/1" do
     test "returns wkhtmltopdf options list" do
       opts = %Pdf{}
