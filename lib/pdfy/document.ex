@@ -1,5 +1,7 @@
 defmodule Pdfy.Document do
 
+  @wkhtmltopdf_path Application.get_env(:pdfy, :wkhtmltopdf_path)
+
   def generate_pdf(html) do
     html_path = tempfile_path(:html)
     pdf_path  = tempfile_path(:pdf)
@@ -7,7 +9,7 @@ defmodule Pdfy.Document do
     options = ["--quiet", html_path, pdf_path]
 
     with :ok <- File.write(html_path, html),
-         {_, 0} <- System.cmd("wkhtmltopdf", options) do
+         {_, 0} <- System.cmd(@wkhtmltopdf_path, options) do
       {:ok, pdf_path}
     end
   end
