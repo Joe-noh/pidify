@@ -13,6 +13,9 @@ defmodule Pdfy.Document do
 
     with :ok <- File.write(html_path, html),
          {_, 0} <- System.cmd(@wkhtmltopdf_path, options) do
+      Pdfy.FileRemover.remove_after(html_path, 5 * 60 * 1000)
+      Pdfy.FileRemover.remove_after(pdf_path,  5 * 60 * 1000)
+
       {:ok, pdf_path}
     end
   end
