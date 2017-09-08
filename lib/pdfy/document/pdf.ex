@@ -13,6 +13,7 @@ defmodule Pdfy.Document.Pdf do
     page_height
     page_width
     title
+    disable_javascript
   ]a
 
   defstruct @attrs
