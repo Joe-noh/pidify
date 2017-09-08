@@ -10,8 +10,7 @@ defmodule Pdfy.Application do
     children = [
       # Start the endpoint when the application starts
       supervisor(PdfyWeb.Endpoint, []),
-      # Start your own worker by calling: Pdfy.Worker.start_link(arg1, arg2, arg3)
-      # worker(Pdfy.Worker, [arg1, arg2, arg3]),
+      worker(Pdfy.FileRemover, []),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
