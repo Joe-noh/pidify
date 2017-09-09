@@ -1,4 +1,4 @@
-defmodule PdfyWeb.ChannelCase do
+defmodule PidifyWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,7 +21,7 @@ defmodule PdfyWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint PdfyWeb.Endpoint
+      @endpoint PidifyWeb.Endpoint
     end
   end
 

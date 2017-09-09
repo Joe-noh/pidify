@@ -1,5 +1,5 @@
-defmodule PdfyWeb.ErrorView do
-  use PdfyWeb, :view
+defmodule PidifyWeb.ErrorView do
+  use PidifyWeb, :view
 
   def render("404.json", _assigns) do
     %{errors: %{detail: "Page not found"}}

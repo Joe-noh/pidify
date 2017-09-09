@@ -1,10 +1,10 @@
-defmodule PdfyWeb.PdfController do
-  use PdfyWeb, :controller
+defmodule PidifyWeb.PdfController do
+  use PidifyWeb, :controller
 
   require Base
-  alias Pdfy.Document
+  alias Pidify.Document
 
-  action_fallback PdfyWeb.FallbackController
+  action_fallback PidifyWeb.FallbackController
 
   def create(conn, params) do
     {html, params} = Map.pop(params, "html")

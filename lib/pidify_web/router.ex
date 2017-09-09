@@ -1,11 +1,11 @@
-defmodule PdfyWeb.Router do
-  use PdfyWeb, :router
+defmodule PidifyWeb.Router do
+  use PidifyWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/", PdfyWeb do
+  scope "/", PidifyWeb do
     pipe_through :api
 
     post "/generate", PdfController, :create

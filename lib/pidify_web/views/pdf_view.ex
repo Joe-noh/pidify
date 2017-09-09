@@ -1,6 +1,6 @@
-defmodule PdfyWeb.PdfView do
-  use PdfyWeb, :view
-  alias PdfyWeb.PdfView
+defmodule PidifyWeb.PdfView do
+  use PidifyWeb, :view
+  alias PidifyWeb.PdfView
 
   def render("index.json", %{pdfs: pdfs}) do
     %{data: render_many(pdfs, PdfView, "pdf.json")}

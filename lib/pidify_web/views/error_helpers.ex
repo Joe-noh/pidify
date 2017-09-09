@@ -1,4 +1,4 @@
-defmodule PdfyWeb.ErrorHelpers do
+defmodule PidifyWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -21,9 +21,9 @@ defmodule PdfyWeb.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(PdfyWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(PidifyWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(PdfyWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(PidifyWeb.Gettext, "errors", msg, opts)
     end
   end
 end
