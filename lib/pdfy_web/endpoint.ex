@@ -1,14 +1,14 @@
-defmodule PdfyWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :pdfy
+defmodule PidifyWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :pidify
 
-  socket "/socket", PdfyWeb.UserSocket
+  socket "/socket", PidifyWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :pdfy, gzip: false,
+    at: "/", from: :pidify, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -33,14 +33,14 @@ defmodule PdfyWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_pdfy_key",
+    key: "_pidify_key",
     signing_salt: "YTBN7hg5"
 
   plug Corsica,
     origins: "*",
     allow_headers: ~w[accept content-type authorization origin]
 
-  plug PdfyWeb.Router
+  plug PidifyWeb.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.

@@ -1,9 +1,9 @@
-defmodule Pdfy.Mixfile do
+defmodule Pidify.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :pdfy,
+      app: :pidify,
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -18,7 +18,7 @@ defmodule Pdfy.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Pdfy.Application, []},
+      mod: {Pidify.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

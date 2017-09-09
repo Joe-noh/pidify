@@ -1,4 +1,4 @@
-defmodule Pdfy.Document.Pdf do
+defmodule Pidify.Document.Pdf do
   @attrs ~w[
     dpi
     grayscale

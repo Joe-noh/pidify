@@ -1,4 +1,4 @@
-# Pdfy
+# Pidify
 
 To start your Phoenix server:
 

@@ -1,4 +1,4 @@
-defmodule PdfyWeb.ConnCase do
+defmodule PidifyWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,10 +19,10 @@ defmodule PdfyWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import PdfyWeb.Router.Helpers
+      import PidifyWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint PdfyWeb.Endpoint
+      @endpoint PidifyWeb.Endpoint
     end
   end
 

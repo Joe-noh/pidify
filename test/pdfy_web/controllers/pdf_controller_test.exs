@@ -1,5 +1,5 @@
-defmodule PdfyWeb.PdfControllerTest do
-  use PdfyWeb.ConnCase
+defmodule PidifyWeb.PdfControllerTest do
+  use PidifyWeb.ConnCase
 
   @params %{html: "<h1>こんにちわ</h1>", grayscale: true}
 

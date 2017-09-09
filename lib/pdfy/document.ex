@@ -1,8 +1,8 @@
-defmodule Pdfy.Document do
+defmodule Pidify.Document do
 
-  alias Pdfy.Document.Pdf
+  alias Pidify.Document.Pdf
 
-  @wkhtmltopdf_path Application.get_env(:pdfy, :wkhtmltopdf_path)
+  @wkhtmltopdf_path Application.get_env(:pidify, :wkhtmltopdf_path)
 
   def generate_pdf(html, opts) do
     html_path = tempfile_path(:html)
@@ -13,8 +13,8 @@ defmodule Pdfy.Document do
 
     with :ok <- File.write(html_path, html),
          {_, 0} <- System.cmd(@wkhtmltopdf_path, options) do
-      Pdfy.FileRemover.remove_after(html_path, 5 * 60 * 1000)
-      Pdfy.FileRemover.remove_after(pdf_path,  5 * 60 * 1000)
+      Pidify.FileRemover.remove_after(html_path, 5 * 60 * 1000)
+      Pidify.FileRemover.remove_after(pdf_path,  5 * 60 * 1000)
 
       {:ok, pdf_path}
     end

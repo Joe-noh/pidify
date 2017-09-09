@@ -6,14 +6,14 @@
 use Mix.Config
 
 # Configures the endpoint
-config :pdfy, PdfyWeb.Endpoint,
+config :pidify, PidifyWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "gkGi0dNFDLLbcom6mfg/bdlX/B+zA6lCrccLltpACfhBv/+q2IOMOMxANj/Rq8aL",
-  render_errors: [view: PdfyWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: Pdfy.PubSub,
+  render_errors: [view: PidifyWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: Pidify.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
-config :pdfy, :wkhtmltopdf_path, Map.get(System.get_env(), "WKHTMLTOPDF_PATH", "wkhtmltopdf")
+config :pidify, :wkhtmltopdf_path, Map.get(System.get_env(), "WKHTMLTOPDF_PATH", "wkhtmltopdf")
 
 # Configures Elixir's Logger
 config :logger, :console,
