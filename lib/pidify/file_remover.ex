@@ -1,4 +1,4 @@
-defmodule Pdfy.FileRemover do
+defmodule Pidify.FileRemover do
   use GenServer
 
   def start_link do
